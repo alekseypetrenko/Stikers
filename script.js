@@ -11,7 +11,9 @@ let draggedElement,
   // Старт  - клик мыши по элементу и получение его координат.
   elStartsDrag = function (ev) {
     let elementPosition;
-    
+    if (ev.target.className !== "bar") {
+      return;
+    }
     draggedElement = this;
     
     elementPosition = draggedElement.getBoundingClientRect();
@@ -58,7 +60,7 @@ let draggedElement,
         elBar = document.createElement('div'),
         elTextarea = document.createElement('textarea');
     
-    let randomDisplaySticker = "translateX(" + Math.random() * 350 + "px) translateY(" + Math.random() * 200 + "px)";
+    var randomDisplaySticker = "translateX(" + Math.random() * 350 + "px) translateY(" + Math.random() * 200 + "px)";
     
     elSticker.style.transform = randomDisplaySticker; 
     
